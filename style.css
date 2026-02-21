@@ -105,6 +105,12 @@ section > p {
     margin-left: 4px;
 }
 
+/* ===== Activities ===== */
+.activity-desc {
+    font-size: 0.9rem;
+    color: #555;
+}
+
 /* ===== Publications ===== */
 .pub-list {
     padding-left: 22px;
