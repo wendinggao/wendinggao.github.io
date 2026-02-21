@@ -133,6 +133,7 @@ section > p {
 .skill-label {
     font-weight: bold;
     width: 160px;
+    padding-right: 20px;
     color: #333;
 }
 
