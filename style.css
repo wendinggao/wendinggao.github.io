@@ -128,12 +128,15 @@ section > p {
 .skills-table td {
     padding: 4px 0;
     vertical-align: top;
+}
+
+.skills-table td:last-child {
     text-align: right;
 }
 
 .skill-label {
     font-weight: bold;
-    width: 160px;
+    width: 180px;
     padding-right: 20px;
     color: #333;
     text-align: left;
