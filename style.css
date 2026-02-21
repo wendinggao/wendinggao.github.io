@@ -114,11 +114,20 @@ section > p {
     margin-bottom: 10px;
 }
 
+.pub-entry {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+}
+
 .pub-cover {
-    display: block;
-    max-width: 280px;
-    margin-bottom: 8px;
+    flex-shrink: 0;
+    width: 140px;
     border: 1px solid #ccc;
+}
+
+.pub-text {
+    flex: 1;
 }
 
 .pub-title {
