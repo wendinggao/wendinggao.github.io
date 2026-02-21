@@ -114,6 +114,13 @@ section > p {
     margin-bottom: 10px;
 }
 
+.pub-cover {
+    display: block;
+    max-width: 100%;
+    margin-bottom: 8px;
+    border: 1px solid #ccc;
+}
+
 .pub-title {
     font-weight: bold;
 }
