@@ -118,6 +118,12 @@ section > p {
     font-weight: bold;
 }
 
+/* ===== Projects ===== */
+.project-meta {
+    font-size: 0.88rem;
+    color: #666;
+}
+
 /* ===== Skills ===== */
 .skills-table {
     border-collapse: collapse;
