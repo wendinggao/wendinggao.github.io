@@ -216,17 +216,12 @@ a:hover {
     flex-shrink: 0;
 }
 
-.photo-placeholder {
+.portrait {
     width: 180px;
     height: 220px;
     border-radius: 6px;
-    background: var(--bg-alt);
     border: 2px solid var(--border);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-light);
-    font-size: 0.9rem;
+    object-fit: cover;
 }
 
 /* ===== Sections ===== */
