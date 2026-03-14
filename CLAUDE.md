@@ -10,6 +10,10 @@ Static personal academic homepage for Wending Gao, hosted on GitHub Pages at `we
 
 - **`index.html`** — Single-page site with all content. Sections: navigation, hero/about, education, experience, publications, skills, contact, footer. Contains inline `<script>` at the bottom for mobile nav toggle, smooth scroll, and scroll-based navbar styling.
 - **`style.css`** — All styles. Uses CSS custom properties (`:root` variables) for theming (colors, fonts, shadows). Responsive breakpoint at 768px. Fonts loaded from Google Fonts: Crimson Text (serif, headings) and Source Sans 3 (sans-serif, body).
+- **`portrait.jpg`** — Profile photo used in the hero section.
+- **`omni.png`** — Image asset used in the publications/projects section.
+
+Note: `README.md` documents a separate research paper project (LeanAnalytic) and is unrelated to this website.
 
 ## Development
 
