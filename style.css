@@ -288,6 +288,25 @@ a.contact-item:hover .contact-value {
     letter-spacing: 0.03em;
 }
 
+/* ===== Coursework ===== */
+
+.course-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    padding: 2px 0;
+}
+
+.course-name {
+    color: var(--text);
+}
+
+.course-gpa {
+    color: var(--accent);
+    font-weight: 400;
+    letter-spacing: 0.04em;
+}
+
 /* ===== Publications ===== */
 
 .pub-entry {
