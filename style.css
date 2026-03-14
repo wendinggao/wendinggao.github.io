@@ -267,6 +267,7 @@ a.contact-item:hover .contact-value {
     display: flex;
     flex-direction: column;
     gap: 2px;
+    flex: 1;
 }
 
 .entry-main strong {
@@ -292,6 +293,7 @@ a.contact-item:hover .contact-value {
 
 .course-row {
     display: flex;
+    width: 100%;
     font-size: 0.85rem;
     padding: 2px 0;
 }
