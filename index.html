@@ -3,145 +3,199 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wending Gao</title>
+    <title>Wending Gao — Applied Mathematics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <!-- Header -->
-        <header class="header">
-            <div class="profile">
-                <img src="portrait.jpg" alt="Wending Gao" class="portrait">
-                <div class="profile-info">
-                    <h1>Wending Gao</h1>
-                    <p class="affiliation">B.S. Student in Applied Mathematics</p>
-                    <p class="affiliation"><a href="https://www.liverpool.ac.uk/">University of Liverpool</a></p>
-                    <p class="contact-line">Email: <a href="mailto:wending.gao25@student.xjtlu.edu.cn">wending.gao25@student.xjtlu.edu.cn</a></p>
-                    <p class="contact-line">GitHub: <a href="https://github.com/wendinggao">github.com/wendinggao</a></p>
-                    <p class="contact-line">Location: Suzhou, China</p>
+    <div class="layout">
+
+        <aside class="sidebar">
+            <div class="sidebar-inner">
+                <div class="profile-block">
+                    <img src="portrait.jpg" alt="Wending Gao" class="portrait">
+                    <h1 class="name">Wending<br>Gao</h1>
+                    <p class="title-line">B.S. Applied Mathematics</p>
+                    <p class="title-line"><a href="https://www.liverpool.ac.uk/">University of Liverpool</a></p>
                 </div>
+
+                <div class="contact-block">
+                    <a href="mailto:wending.gao25@student.xjtlu.edu.cn" class="contact-item">
+                        <span class="contact-label">Email</span>
+                        <span class="contact-value">wending.gao25@student.xjtlu.edu.cn</span>
+                    </a>
+                    <a href="https://github.com/wendinggao" class="contact-item">
+                        <span class="contact-label">GitHub</span>
+                        <span class="contact-value">wendinggao</span>
+                    </a>
+                    <div class="contact-item">
+                        <span class="contact-label">Location</span>
+                        <span class="contact-value">Suzhou, China</span>
+                    </div>
+                </div>
+
+                <nav class="sidebar-nav">
+                    <a href="#about" class="nav-item">About</a>
+                    <a href="#education" class="nav-item">Education</a>
+                    <a href="#activities" class="nav-item">Activities</a>
+                    <a href="#publications" class="nav-item">Publications</a>
+                    <a href="#projects" class="nav-item">Projects</a>
+                    <a href="#skills" class="nav-item">Skills</a>
+                </nav>
+
+                <p class="copyright">© 2026 Wending Gao</p>
             </div>
-        </header>
+        </aside>
 
-        <hr>
+        <main class="main">
 
-        <!-- About -->
-        <section id="about">
-            <h2>About Me</h2>
-            <p>
-                I am a first-year undergraduate student expecting to complete my BSc degree in Applied Mathematics
-                at the University of Liverpool in 2029. I am currently seeking research internships or visiting
-                student opportunities. If you are interested in my research, please feel free to contact me.
-            </p>
-            <p>
-                My research interests span machine learning and math reasoning. In my spare time, I also engage
-                in research on multimodal large language models and geometry problem solving.
-            </p>
-        </section>
+            <section id="about" class="section">
+                <div class="section-header">
+                    <span class="section-num">01</span>
+                    <h2 class="section-title">About</h2>
+                </div>
+                <p>I am a first-year undergraduate student expecting to complete my BSc degree in Applied Mathematics at the University of Liverpool in 2029. I am currently seeking research internships or visiting student opportunities. If you are interested in my research, please feel free to contact me.</p>
+                <p>My research interests span machine learning and math reasoning. In my spare time, I also engage in research on multimodal large language models and geometry problem solving.</p>
+            </section>
 
-        <hr>
-
-        <!-- Education -->
-        <section id="education">
-            <h2>Education</h2>
-            <ul class="entry-list">
-                <li>
-                    <strong>B.S. in Applied Mathematics</strong>, University of Liverpool
-                    <span class="date">2025.09 - 2029.06 (Expected)</span>
-                </li>
-            </ul>
-        </section>
-
-        <hr>
-
-        <!-- Activities -->
-        <section id="activities">
-            <h2>Activities</h2>
-            <ul class="entry-list">
-                <li>
-                    <strong>Mathematical Contest in Modeling (MCM)</strong>, 2026
-                    <span class="activity-desc">— Result Pending</span>
-                </li>
-                <li>
-                    <strong>Lecturer</strong>, Academic Department, Mathematics Club<br>
-                    <span class="activity-desc">Organized and delivered multiple large-scale lectures on mathematics topics.</span>
-                </li>
-            </ul>
-        </section>
-
-        <hr>
-
-        <!-- Publications -->
-        <section id="publications">
-            <h2>Publications</h2>
-            <ol class="pub-list">
-                <li class="pub-entry">
-                    <img src="omni.png" alt="Omni-Geo" class="pub-cover">
-                    <div class="pub-text">
-                        <span class="pub-title">Omni-Geo: Full-Domain Geometry with Multimodal Diagram Generation</span><br>
-                        Ruoran Xu, <strong>Wending Gao</strong>, Haoyu Cheng, Chengrui Zhang, Maizhen Ning, Qiufeng Wang<br>
-                        <em>ECCV 2026</em> (Under Review)<br>
-                        We present Omni-Geo, the first unified benchmark for general geometric intelligence spanning plane, analytic, and solid geometry, built on a standardized Geometric Description Language (GDL) and an SDF-based diagram synthesis engine that produces contamination-free data. Comprising ~23K problems evaluated on 11 state-of-the-art LLMs and MLLMs, Omni-Geo highlights the necessity of a comprehensive, unified benchmark for assessing geometric reasoning.
+            <section id="education" class="section">
+                <div class="section-header">
+                    <span class="section-num">02</span>
+                    <h2 class="section-title">Education</h2>
+                </div>
+                <div class="entry">
+                    <div class="entry-main">
+                        <strong>B.S. in Applied Mathematics</strong>
+                        <span class="entry-sub">University of Liverpool</span>
                     </div>
-                </li>
-                <li class="pub-entry">
-                    <div class="pub-text">
-                        <span class="pub-title">SDF-AnalyticGeo: Multi-Agent for Analytic Geometry Problem Generation</span><br>
-                        Ruoran Xu, <strong>Wending Gao</strong>, Qiufeng Wang<br>
-                        <em>ACM MM 2026</em> (Under Review)<br>
-                        We propose SDF-AnalyticGeo, a scalable multi-agent pipeline for generating large-scale, high-quality multimodal analytic geometry problems via three collaborative agents covering problem generation, formalization, and SDF-based figure rendering. The resulting dataset—integrating natural language, standardized geometric images, ground-truth answers, and formal annotations—achieves over 90% geometric consistency and provides a unified benchmark for evaluating MLLMs on analytic geometry reasoning.
+                    <span class="entry-date">2025.09 — 2029.06</span>
+                </div>
+            </section>
+
+            <section id="activities" class="section">
+                <div class="section-header">
+                    <span class="section-num">03</span>
+                    <h2 class="section-title">Activities</h2>
+                </div>
+                <div class="entry">
+                    <div class="entry-main">
+                        <strong>Mathematical Contest in Modeling (MCM)</strong>
+                        <span class="entry-sub">Result Pending</span>
                     </div>
-                </li>
-            </ol>
-        </section>
+                    <span class="entry-date">2026</span>
+                </div>
+                <div class="entry">
+                    <div class="entry-main">
+                        <strong>Lecturer</strong>, Academic Department, Mathematics Club
+                        <span class="entry-sub">Organized and delivered multiple large-scale lectures on mathematics topics.</span>
+                    </div>
+                </div>
+            </section>
 
-        <hr>
+            <section id="publications" class="section">
+                <div class="section-header">
+                    <span class="section-num">04</span>
+                    <h2 class="section-title">Publications</h2>
+                </div>
 
-        <!-- Projects -->
-        <section id="projects">
-            <h2>Projects</h2>
-            <ul class="pub-list">
-                <li>
-                    <span class="pub-title">Autoformalizing Analytic Geometry: Bridging Natural Language and Algebraic Proofs</span><br>
-                    Building a neuro-symbolic engine that translates natural language geometry problems into
-                    Lean 4 code using coordinate algebra, and automates rigorous proofs via Gr&ouml;bner bases
-                    and Cylindrical Algebraic Decomposition. Includes a curated benchmark (<em>AnalyticBench</em>)
-                    of 200+ problems across linear systems, conic sections, and optimization.<br>
-                    <span class="project-meta">Status: Work in Progress (Expected completion: June 2026)</span>
-                </li>
-            </ul>
-        </section>
+                <div class="pub-entry">
+                    <img src="omni.png" alt="Omni-Geo" class="pub-img">
+                    <div class="pub-body">
+                        <p class="pub-title">Omni-Geo: Full-Domain Geometry with Multimodal Diagram Generation</p>
+                        <p class="pub-authors">Ruoran Xu, <strong>Wending Gao</strong>, Haoyu Cheng, Chengrui Zhang, Maizhen Ning, Qiufeng Wang</p>
+                        <p class="pub-venue"><em>ECCV 2026</em> <span class="pub-status">Under Review</span></p>
+                        <p class="pub-abstract">We present Omni-Geo, the first unified benchmark for general geometric intelligence spanning plane, analytic, and solid geometry, built on a standardized Geometric Description Language (GDL) and an SDF-based diagram synthesis engine that produces contamination-free data. Comprising ~23K problems evaluated on 11 state-of-the-art LLMs and MLLMs, Omni-Geo highlights the necessity of a comprehensive, unified benchmark for assessing geometric reasoning.</p>
+                    </div>
+                </div>
 
-        <hr>
+                <div class="pub-entry">
+                    <div class="pub-body">
+                        <p class="pub-title">SDF-AnalyticGeo: Multi-Agent for Analytic Geometry Problem Generation</p>
+                        <p class="pub-authors">Ruoran Xu, <strong>Wending Gao</strong>, Qiufeng Wang</p>
+                        <p class="pub-venue"><em>ACM MM 2026</em> <span class="pub-status">Under Review</span></p>
+                        <p class="pub-abstract">We propose SDF-AnalyticGeo, a scalable multi-agent pipeline for generating large-scale, high-quality multimodal analytic geometry problems via three collaborative agents covering problem generation, formalization, and SDF-based figure rendering. The resulting dataset—integrating natural language, standardized geometric images, ground-truth answers, and formal annotations—achieves over 90% geometric consistency and provides a unified benchmark for evaluating MLLMs on analytic geometry reasoning.</p>
+                    </div>
+                </div>
+            </section>
 
-        <!-- Skills -->
-        <section id="skills">
-            <h2>Skills</h2>
-            <table class="skills-table">
-                <tr>
-                    <td class="skill-label">Programming</td>
-                    <td>Python, C/C++, MATLAB, Lean</td>
-                </tr>
-                <tr>
-                    <td class="skill-label">Frameworks & Tools</td>
-                    <td>PyTorch, TensorFlow</td>
-                </tr>
-                <tr>
-                    <td class="skill-label">Research Areas</td>
-                    <td>Machine Learning, Math Reasoning, Autoformalization</td>
-                </tr>
-                <tr>
-                    <td class="skill-label">Languages</td>
-                    <td>Chinese (Native), English (Fluent)</td>
-                </tr>
-            </table>
-        </section>
+            <section id="projects" class="section">
+                <div class="section-header">
+                    <span class="section-num">05</span>
+                    <h2 class="section-title">Projects</h2>
+                </div>
+                <div class="project-entry">
+                    <p class="pub-title">Autoformalizing Analytic Geometry: Bridging Natural Language and Algebraic Proofs</p>
+                    <p>Building a neuro-symbolic engine that translates natural language geometry problems into Lean 4 code using coordinate algebra, and automates rigorous proofs via Gröbner bases and Cylindrical Algebraic Decomposition. Includes a curated benchmark (<em>AnalyticBench</em>) of 200+ problems across linear systems, conic sections, and optimization.</p>
+                    <p class="project-status">Work in Progress — Expected completion: June 2026</p>
+                </div>
+            </section>
 
-        <!-- Footer -->
-        <footer>
-            <hr>
-            <p>&copy; 2026 Wending Gao</p>
-        </footer>
+            <section id="skills" class="section">
+                <div class="section-header">
+                    <span class="section-num">06</span>
+                    <h2 class="section-title">Skills</h2>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-row">
+                        <span class="skill-label">Programming</span>
+                        <span class="skill-value">Python · C/C++ · MATLAB · Lean</span>
+                    </div>
+                    <div class="skill-row">
+                        <span class="skill-label">Frameworks</span>
+                        <span class="skill-value">PyTorch · TensorFlow</span>
+                    </div>
+                    <div class="skill-row">
+                        <span class="skill-label">Research</span>
+                        <span class="skill-value">Machine Learning · Math Reasoning · Autoformalization</span>
+                    </div>
+                    <div class="skill-row">
+                        <span class="skill-label">Languages</span>
+                        <span class="skill-value">Chinese (Native) · English (Fluent)</span>
+                    </div>
+                </div>
+            </section>
+
+        </main>
     </div>
+
+    <script>
+        // Active nav on scroll
+        const sections = document.querySelectorAll('.section');
+        const navItems = document.querySelectorAll('.nav-item');
+
+        const navObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    navItems.forEach(item => item.classList.remove('active'));
+                    const active = document.querySelector(`.nav-item[href="#${entry.target.id}"]`);
+                    if (active) active.classList.add('active');
+                }
+            });
+        }, { rootMargin: '-20% 0px -70% 0px' });
+
+        sections.forEach(s => navObserver.observe(s));
+
+        // Entrance animations
+        const animObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    animObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.05 });
+
+        sections.forEach(s => animObserver.observe(s));
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                e.preventDefault();
+                document.querySelector(a.getAttribute('href'))?.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
 </body>
 </html>
