@@ -293,6 +293,7 @@ a.contact-item:hover .contact-value {
 .course-row {
     display: flex;
     justify-content: space-between;
+    gap: 40px;
     font-size: 0.85rem;
     padding: 2px 0;
 }
