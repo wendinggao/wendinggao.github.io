@@ -302,7 +302,9 @@ a.contact-item:hover .contact-value {
 }
 
 .course-gpa {
-    margin-left: 48px;
+    flex-shrink: 0;
+    width: 72px;
+    text-align: right;
     white-space: nowrap;
     color: var(--accent);
     font-weight: 400;
