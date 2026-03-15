@@ -317,7 +317,8 @@ a.contact-item:hover .contact-value {
 
 .pub-entry {
     display: flex;
-    gap: 22px;
+    flex-direction: column;
+    gap: 0;
     padding: 22px 0;
     border-bottom: 1px solid var(--border);
 }
@@ -327,10 +328,10 @@ a.contact-item:hover .contact-value {
 }
 
 .pub-img {
-    width: 116px;
-    flex-shrink: 0;
-    align-self: flex-start;
+    width: 100%;
+    display: block;
     border: 1px solid var(--border);
+    margin-bottom: 14px;
 }
 
 .pub-body {
@@ -486,14 +487,6 @@ a.contact-item:hover .contact-value {
         flex-direction: column;
     }
 
-    .pub-entry {
-        flex-direction: column;
-    }
-
-    .pub-img {
-        width: 100%;
-        max-width: 180px;
-    }
 
     .entry {
         flex-direction: column;
