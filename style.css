@@ -395,6 +395,12 @@ a.contact-item:hover .contact-value {
     display: flex;
     flex-direction: column;
     gap: 11px;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.project-entry:first-of-type {
+    padding-top: 0;
 }
 
 .project-status {
