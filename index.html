@@ -885,7 +885,7 @@ em { font-style: italic; font-feature-settings: "ss01"; }
             <a href="#projects">Projects</a>
             <a href="#education">Education</a>
             <a href="#skills">Skills</a>
-            <a href="/cdn-cgi/l/email-protection#83f4e6ede7eaede4ade4e2ecb1b6c3f0f7f6e7e6edf7adfbe9f7eff6ade6e7f6ade0ed" class="top-nav-cta">Get in touch →</a>
+            <a href="#" class="top-nav-cta" data-email>Get in touch →</a>
         </nav>
     </header>
 
@@ -904,7 +904,7 @@ em { font-style: italic; font-feature-settings: "ss01"; }
             with a particular interest in geometry.
         </p>
         <div class="hero-meta">
-            <a href="/cdn-cgi/l/email-protection#d4a3b1bab0bdbab3fab3b5bbe6e194a7a0a1b0b1baa0faacbea0b8a1fab1b0a1fab7ba" class="btn btn-primary">Email me</a>
+            <a href="#" class="btn btn-primary" data-email>Email me</a>
             <a href="https://github.com/wendinggao" class="btn btn-ghost">GitHub ↗</a>
             <span class="hero-status">Seeking research internships &amp; visiting positions</span>
         </div>
@@ -1152,9 +1152,9 @@ em { font-style: italic; font-feature-settings: "ss01"; }
             <p class="contact-eyebrow">§ 08 — Contact</p>
             <h2 class="contact-title">If the work above resonates,<br>I'd love to hear from you.</h2>
             <div class="contact-grid">
-                <a class="contact-card" href="/cdn-cgi/l/email-protection#5d2a38333934333a733a3c326f681d2e29283938332973253729312873383928733e33">
+                <a class="contact-card" href="#" data-email data-email-show>
                     <span class="cc-label">Email</span>
-                    <span class="cc-value"><span class="__cf_email__" data-cfemail="7f081a111b16111851181e104d4a3f0c0b0a1b1a110b5107150b130a511a1b0a511c11">[email&#160;protected]</span></span>
+                    <span class="cc-value" data-email-text>(loading)</span>
                     <span class="cc-arrow">→</span>
                 </a>
                 <a class="contact-card" href="https://github.com/wendinggao">
@@ -1182,7 +1182,7 @@ em { font-style: italic; font-feature-settings: "ss01"; }
 
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
     // Scroll-activated nav
     const navLinks = document.querySelectorAll('.top-nav a[href^="#"]');
     const idToLink = {};
@@ -1221,6 +1221,19 @@ em { font-style: italic; font-feature-settings: "ss01"; }
             }
         });
     });
+
+    // Email assembly (anti-obfuscation): pieces joined at runtime
+    (function setupEmail() {
+        const user = ['wending', '.', 'gao25'].join('');
+        const domain = ['student', '.', 'xjtlu', '.', 'edu', '.', 'cn'].join('');
+        const addr = user + '@' + domain;
+        document.querySelectorAll('[data-email]').forEach(el => {
+            el.setAttribute('href', 'mailto:' + addr);
+        });
+        document.querySelectorAll('[data-email-text]').forEach(el => {
+            el.textContent = addr;
+        });
+    })();
 </script>
 
 </body>
