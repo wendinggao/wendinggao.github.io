@@ -57,7 +57,16 @@ body {
 .sidebar {
     position: sticky;
     top: 40px;
+    max-height: calc(100vh - 60px);
+    overflow-y: auto;
+    padding-right: 8px;
+    /* subtle scrollbar */
+    scrollbar-width: thin;
+    scrollbar-color: #d8cdbd transparent;
 }
+.sidebar::-webkit-scrollbar { width: 6px; }
+.sidebar::-webkit-scrollbar-thumb { background: #d8cdbd; border-radius: 3px; }
+.sidebar::-webkit-scrollbar-track { background: transparent; }
 .content { min-width: 0; }
 .content > section:first-of-type { margin-top: 0; }
 .content > section:first-of-type h2 { margin-top: 0; }
