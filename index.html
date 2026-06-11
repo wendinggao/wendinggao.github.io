@@ -31,13 +31,13 @@
 
 /* ---------- Dark palette ---------- */
 :root {
-    --bg: #121110;          /* warm near-black */
-    --text: #e8e3d9;        /* warm off-white */
-    --text-dim: #b3aca0;    /* secondary text */
-    --text-faint: #807a6f;  /* tertiary / footer */
+    --bg: #111112;          /* neutral near-black */
+    --text: #e4e4e6;        /* neutral off-white */
+    --text-dim: #a8a8ad;    /* secondary text */
+    --text-faint: #7a7a80;  /* tertiary / footer */
     --link: #9db8e8;        /* soft light blue */
-    --rule: #3d3a34;        /* section rules */
-    --rule-soft: #2b2925;   /* dotted / light rules */
+    --rule: #3a3a3e;        /* section rules */
+    --rule-soft: #28282b;   /* dotted / light rules */
     --accent-mono: #ffffff; /* mono labels (dates, statuses) */
 }
 
@@ -75,10 +75,10 @@ body {
     overflow-y: auto;
     padding-right: 8px;
     scrollbar-width: thin;
-    scrollbar-color: #45413a transparent;
+    scrollbar-color: #424246 transparent;
 }
 .sidebar::-webkit-scrollbar { width: 6px; }
-.sidebar::-webkit-scrollbar-thumb { background: #45413a; border-radius: 3px; }
+.sidebar::-webkit-scrollbar-thumb { background: #424246; border-radius: 3px; }
 .sidebar::-webkit-scrollbar-track { background: transparent; }
 .content { min-width: 0; }
 .content > section:first-of-type { margin-top: 0; }
@@ -102,7 +102,7 @@ header.top {
     align-items: center;
     justify-content: center;
     border: 1px dashed var(--rule);
-    background: #1b1a18;
+    background: #1a1a1c;
     color: var(--text-faint);
     font-family: "Latin Modern Mono", "Courier New", monospace;
     font-size: 0.8rem;
@@ -117,7 +117,7 @@ header.top {
     margin: 0 0 6px;
     letter-spacing: 0.005em;
     line-height: 1.15;
-    color: #f4f0e8;
+    color: #f5f5f6;
 }
 .affil {
     margin: 0 0 12px;
@@ -154,7 +154,7 @@ h2 {
     padding-bottom: 6px;
     border-bottom: 1px solid var(--rule);
     letter-spacing: 0.01em;
-    color: #f4f0e8;
+    color: #f5f5f6;
 }
 
 section > p:first-of-type { margin-top: 14px; }
@@ -207,7 +207,7 @@ section p { margin: 12px 0; }
     font-weight: bold;
     margin: 0 0 3px;
     line-height: 1.35;
-    color: #f4f0e8;
+    color: #f5f5f6;
 }
 .pub-authors {
     margin: 0 0 3px;
@@ -226,10 +226,11 @@ section p { margin: 12px 0; }
 .pub-links a { margin-right: 2px; }
 .pub-links .status {
     font-family: "Latin Modern Mono", "Courier New", monospace;
-    font-size: 0.78rem;
-    color: var(--text-dim);
+    font-size: 0.88rem;
+    font-weight: bold;
+    color: var(--text);
     margin-right: 10px;
-    letter-spacing: 0.03em;
+    letter-spacing: 0.04em;
 }
 
 /* ---------- Projects ---------- */
@@ -241,7 +242,7 @@ section p { margin: 12px 0; }
 .project-title {
     font-weight: bold;
     margin: 0 0 2px;
-    color: #f4f0e8;
+    color: #f5f5f6;
 }
 .project-target {
     font-family: "Latin Modern Mono", "Courier New", monospace;
@@ -265,7 +266,7 @@ section p { margin: 12px 0; }
     text-align: right;
     white-space: nowrap;
 }
-.cv-role { font-weight: bold; color: #f4f0e8; }
+.cv-role { font-weight: bold; color: #f5f5f6; }
 .cv-sub {
     display: block;
     font-size: 0.94rem;
@@ -284,7 +285,7 @@ section p { margin: 12px 0; }
 }
 .skill-row .skill-label {
     font-weight: bold;
-    color: #f4f0e8;
+    color: #f5f5f6;
 }
 
 /* ---------- Contact ---------- */
@@ -478,7 +479,7 @@ footer.foot {
     </div>
     <div class="cv-row">
         <div>
-            <span class="cv-role">Lecturer</span> <span style="color:#b3aca0;">&mdash; Academic Department, Mathematics Club</span>
+            <span class="cv-role">Lecturer</span> <span style="color:#a8a8ad;">&mdash; Academic Department, Mathematics Club</span>
             <span class="cv-sub">Organized and delivered multiple large-scale lectures on mathematics topics.</span>
         </div>
         <div class="cv-date">&nbsp;</div>
