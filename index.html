@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wending Gao</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<style>
+/* Latin Modern Roman via CTAN mirror — LaTeX's Computer Modern */
+@font-face {
+    font-family: 'Latin Modern Roman';
+    src: url('https://cdn.jsdelivr.net/gh/vsalvino/computer-modern@main/fonts/Serif-Roman.woff2') format('woff2');
+    font-weight: normal; font-style: normal; font-display: swap;
+}
+@font-face {
+    font-family: 'Latin Modern Roman';
+    src: url('https://cdn.jsdelivr.net/gh/vsalvino/computer-modern@main/fonts/Serif-Bold.woff2') format('woff2');
+    font-weight: bold; font-style: normal; font-display: swap;
+}
+@font-face {
+    font-family: 'Latin Modern Roman';
+    src: url('https://cdn.jsdelivr.net/gh/vsalvino/computer-modern@main/fonts/Serif-Italic.woff2') format('woff2');
+    font-weight: normal; font-style: italic; font-display: swap;
+}
+@font-face {
+    font-family: 'Latin Modern Mono';
+    src: url('https://cdn.jsdelivr.net/gh/vsalvino/computer-modern@main/fonts/Typewriter-Regular.woff2') format('woff2');
+    font-weight: normal; font-style: normal; font-display: swap;
+}
+
+/* ---------- Dark palette ---------- */
+:root {
+    --bg: #121110;          /* warm near-black */
+    --text: #e8e3d9;        /* warm off-white */
+    --text-dim: #b3aca0;    /* secondary text */
+    --text-faint: #807a6f;  /* tertiary / footer */
+    --link: #9db8e8;        /* soft light blue */
+    --rule: #3d3a34;        /* section rules */
+    --rule-soft: #2b2925;   /* dotted / light rules */
+    --accent-mono: #ffffff; /* mono labels (dates, statuses) */
+}
+
+/* ---------- Reset & base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Latin Modern Roman", "Computer Modern Serif", "Times New Roman", Times, serif;
+    font-size: 17px;
+    line-height: 1.55;
+    color: var(--text);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+::selection { background: #3a4a66; color: #fff; }
+
+/* ---------- Layout ---------- */
+.wrap {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 56px 56px 80px;
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 64px;
+    align-items: start;
+}
+.sidebar {
+    position: sticky;
+    top: 40px;
+    max-height: calc(100vh - 60px);
+    overflow-y: auto;
+    padding-right: 8px;
+    scrollbar-width: thin;
+    scrollbar-color: #45413a transparent;
+}
+.sidebar::-webkit-scrollbar { width: 6px; }
+.sidebar::-webkit-scrollbar-thumb { background: #45413a; border-radius: 3px; }
+.sidebar::-webkit-scrollbar-track { background: transparent; }
+.content { min-width: 0; }
+.content > section:first-of-type { margin-top: 0; }
+.content > section:first-of-type h2 { margin-top: 0; }
+
+/* ---------- Header (sidebar) ---------- */
+header.top {
+    display: block;
+    margin-bottom: 0;
+}
+.portrait, .portrait-placeholder {
+    width: 200px;
+    height: 250px;
+    aspect-ratio: auto;
+    object-fit: cover;
+    object-position: center top;
+    filter: brightness(0.95);
+}
+.portrait-placeholder {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    border: 1px dashed var(--rule);
+    background: #1b1a18;
+    color: var(--text-faint);
+    font-family: "Latin Modern Mono", "Courier New", monospace;
+    font-size: 0.8rem;
+}
+.portrait-wrap.missing .portrait { display: none; }
+.portrait-wrap.missing .portrait-placeholder { display: flex; }
+.bio { margin-top: 18px; }
+
+.name {
+    font-size: 1.8rem;
+    font-weight: normal;
+    margin: 0 0 6px;
+    letter-spacing: 0.005em;
+    line-height: 1.15;
+    color: #f4f0e8;
+}
+.affil {
+    margin: 0 0 12px;
+    font-size: 0.98rem;
+    line-height: 1.4;
+    color: var(--text-dim);
+}
+.quicklinks {
+    margin-top: 16px;
+    font-size: 0.93rem;
+    line-height: 1.9;
+    border-top: 1px solid var(--rule);
+    padding-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+.quicklinks a + a::before { content: none; }
+
+/* ---------- Links ---------- */
+a {
+    color: var(--link);
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+/* ---------- Section headings ---------- */
+h2 {
+    font-size: 1.32rem;
+    font-weight: bold;
+    margin: 40px 0 8px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--rule);
+    letter-spacing: 0.01em;
+    color: #f4f0e8;
+}
+
+section > p:first-of-type { margin-top: 14px; }
+section p { margin: 12px 0; }
+
+/* ---------- About ---------- */
+#about p { text-wrap: pretty; }
+
+/* ---------- News ---------- */
+.news-list {
+    list-style: none;
+    padding: 0;
+    margin: 12px 0 0;
+    border-top: 1px solid var(--rule-soft);
+    border-bottom: 1px solid var(--rule-soft);
+}
+.news-list li {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 14px;
+    padding: 7px 4px;
+    border-bottom: 1px dotted var(--rule-soft);
+    font-size: 0.96rem;
+    align-items: baseline;
+}
+.news-list li:last-child { border-bottom: none; }
+.news-list .news-date {
+    font-family: "Latin Modern Mono", "Courier New", monospace;
+    font-size: 0.86rem;
+    color: var(--accent-mono);
+    white-space: nowrap;
+}
+.news-list .news-body { color: var(--text-dim); }
+
+/* ---------- Publications (plain list, no thumbnails / abstracts) ---------- */
+.pub-equal {
+    font-size: 0.85rem;
+    color: var(--text-faint);
+    margin-top: 8px;
+    margin-bottom: 18px;
+    font-style: italic;
+}
+.pub {
+    margin: 24px 0;
+    padding-left: 18px;
+    border-left: 2px solid var(--rule);
+}
+.pub-body { font-size: 0.98rem; }
+.pub-title {
+    font-weight: bold;
+    margin: 0 0 3px;
+    line-height: 1.35;
+    color: #f4f0e8;
+}
+.pub-authors {
+    margin: 0 0 3px;
+    color: var(--text-dim);
+}
+.pub-authors .me {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    color: var(--text);
+}
+.pub-links {
+    font-size: 0.92rem;
+    color: var(--text-faint);
+    margin: 4px 0 0;
+}
+.pub-links a { margin-right: 2px; }
+.pub-links .status {
+    font-family: "Latin Modern Mono", "Courier New", monospace;
+    font-size: 0.78rem;
+    color: var(--text-dim);
+    margin-right: 10px;
+    letter-spacing: 0.03em;
+}
+
+/* ---------- Projects ---------- */
+.project {
+    margin: 24px 0;
+    padding-left: 18px;
+    border-left: 2px solid var(--rule);
+}
+.project-title {
+    font-weight: bold;
+    margin: 0 0 2px;
+    color: #f4f0e8;
+}
+.project-target {
+    font-family: "Latin Modern Mono", "Courier New", monospace;
+    font-size: 0.85rem;
+    color: var(--accent-mono);
+    margin-top: 4px;
+}
+
+/* ---------- Education / Activities (CV-like rows) ---------- */
+.cv-row {
+    display: grid;
+    grid-template-columns: 1fr 140px;
+    gap: 20px;
+    padding: 8px 0;
+    align-items: baseline;
+}
+.cv-row .cv-date {
+    font-family: "Latin Modern Mono", "Courier New", monospace;
+    font-size: 0.88rem;
+    color: var(--text-faint);
+    text-align: right;
+    white-space: nowrap;
+}
+.cv-role { font-weight: bold; color: #f4f0e8; }
+.cv-sub {
+    display: block;
+    font-size: 0.94rem;
+    color: var(--text-dim);
+    margin-top: 1px;
+}
+
+/* ---------- Skills ---------- */
+.skill-row {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 16px;
+    padding: 6px 0;
+    font-size: 0.98rem;
+    align-items: baseline;
+}
+.skill-row .skill-label {
+    font-weight: bold;
+    color: #f4f0e8;
+}
+
+/* ---------- Contact ---------- */
+#contact p { margin: 8px 0; }
+.contact-list { margin: 10px 0; }
+.contact-list .row {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 12px;
+    padding: 3px 0;
+    font-size: 0.98rem;
+}
+.contact-list .row .k { color: var(--text-faint); }
+
+/* ---------- Footer ---------- */
+footer.foot {
+    margin-top: 60px;
+    padding-top: 16px;
+    border-top: 1px solid var(--rule);
+    font-size: 0.82rem;
+    color: var(--text-faint);
+    font-family: "Latin Modern Mono", "Courier New", monospace;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 860px) {
+    .wrap {
+        grid-template-columns: 1fr;
+        gap: 36px;
+        padding: 28px 24px 60px;
+    }
+    .sidebar { position: static; }
+    .portrait, .portrait-placeholder {
+        max-width: 180px;
+    }
+    .name { font-size: 1.8rem; }
+    .quicklinks { flex-direction: row; flex-wrap: wrap; gap: 2px 14px; }
+    .cv-row { grid-template-columns: 1fr; gap: 4px; }
+    .cv-row .cv-date { text-align: left; }
+    .skill-row { grid-template-columns: 1fr; gap: 2px; }
+    .contact-list .row { grid-template-columns: 90px 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+<!-- ============ SIDEBAR ============ -->
+<aside class="sidebar">
+<header class="top">
+    <div class="portrait-wrap"><img class="portrait" src="portrait.png" alt="Wending Gao" onerror="this.closest('.portrait-wrap').classList.add('missing')"><div class="portrait-placeholder">portrait.png</div></div>
+    <div class="bio">
+        <h1 class="name">Wending Gao</h1>
+        <p class="affil">B.S. Applied Mathematics,<br><a href="https://www.liverpool.ac.uk/">University of Liverpool</a></p>
+        <p class="quicklinks">
+            <a href="#about">About</a>
+            <a href="#news">News</a>
+            <a href="#education">Education</a>
+            <a href="#publications">Publications</a>
+            <a href="#projects">Projects</a>
+            <a href="#activities">Activities</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+        </p>
+    </div>
+</header>
+</aside>
+
+<!-- ============ MAIN CONTENT ============ -->
+<main class="content">
+
+<!-- ============ ABOUT ============ -->
+<section id="about">
+    <h2>About</h2>
+    <p>
+        I am a first-year undergraduate student at Xi'an Jiaotong-Liverpool University,
+        majoring in Applied Mathematics, and I am expected to complete my B.Sc. degree at
+        the University of Liverpool in 2029. Concurrently, I serve as a Research Assistant
+        at <a href="https://premilab-math.github.io">PremiLab</a>, where I am supervised by Prof. <a href="https://scholar.xjtlu.edu.cn/en/persons/QiufengWang/">Qiufeng Wang</a>. I am also seeking
+        research internships or visiting student opportunities. If you are interested in
+        my research, please feel free to contact me.
+    </p>
+    <p>
+        My research interests span <b>reinforcement learning</b> and <b>mathematical reasoning</b>. In
+        my spare time, I also engage in research on multimodal large language models and
+        mechanistic interpretability.
+    </p>
+</section>
+
+<!-- ============ NEWS ============ -->
+<section id="news">
+    <h2>News</h2>
+    <ul class="news-list">
+        <li><span class="news-date">2026.05</span><span class="news-body">I was supported by the Summer Undergraduate Research Fellowship (SURF) at XJTLU.</span></li>
+        <li><span class="news-date">2026.01</span><span class="news-body">I joined <a href="https://premilab-math.github.io">PremiLab</a> as a research assistant.</span></li>
+    </ul>
+</section>
+
+<!-- ============ EDUCATION ============ -->
+<section id="education">
+    <h2>Education</h2>
+    <div class="cv-row">
+        <div>
+            <span class="cv-role">B.S. in Applied Mathematics</span>
+            <span class="cv-sub">University of Liverpool. GPA: 4.0 / 4.0.</span>
+        </div>
+        <div class="cv-date">2025.09 &mdash; Present</div>
+    </div>
+</section>
+
+<!-- ============ PUBLICATIONS ============ -->
+<section id="publications">
+    <h2>Publications</h2>
+    <p class="pub-equal">* denotes equal contribution.</p>
+
+    <div class="pub">
+        <div class="pub-body">
+            <p class="pub-title">Omni-Geo: Full-Domain Geometry with Multimodal Diagram Generation</p>
+            <p class="pub-authors">
+                Ruoran Xu*, <span class="me">Wending Gao</span>*, Haoyu Cheng*, Chengrui Zhang,
+                Maizhen Ning, Qiufeng Wang
+            </p>
+            <p class="pub-links">
+                <span class="status">Under review</span>
+                [<a href="#">paper</a>]
+                [<a href="#">code</a>]
+                [<a href="#">data</a>]
+                [<a href="#">bibtex</a>]
+            </p>
+        </div>
+    </div>
+
+    <div class="pub">
+        <div class="pub-body">
+            <p class="pub-title">PhysElite: How Far Are LLMs from Solving Olympiad-Level Physics Problems?</p>
+            <p class="pub-authors">
+                Ruoran Xu*, <span class="me">Wending Gao</span>*, Liyunfeng Cheng*, Aixin Shi*,
+                Haoyu Cheng*, Zixiang Fang, Yiqiang Zou, Qiufeng Wang
+            </p>
+            <p class="pub-links">
+                <span class="status">Under review</span>
+                [<a href="#">paper</a>]
+                [<a href="#">code</a>]
+                [<a href="#">data</a>]
+                [<a href="#">bibtex</a>]
+            </p>
+        </div>
+    </div>
+
+    <div class="pub">
+        <div class="pub-body">
+            <p class="pub-title">FormalAnalyticGeo: A Neural-Symbolic Based Framework for Multimodal Analytic Geometry Problem Generation</p>
+            <p class="pub-authors">
+                Ruoran Xu*, <span class="me">Wending Gao</span>*, Qiufeng Wang
+            </p>
+            <p class="pub-links">
+                <span class="status">Under review</span>
+                [<a href="#">paper</a>]
+                [<a href="#">code</a>]
+                [<a href="#">data</a>]
+                [<a href="#">bibtex</a>]
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section id="projects">
+    <h2>Projects</h2>
+
+    <div class="project">
+        <p class="project-title">MAB-MCTS Architecture for Neuro-Symbolic Geometry Reasoning</p>
+    </div>
+
+</section>
+
+<!-- ============ ACTIVITIES ============ -->
+<section id="activities">
+    <h2>Activities</h2>
+    <div class="cv-row">
+        <div>
+            <span class="cv-role">Mathematical Contest in Modeling (MCM)</span>
+            <span class="cv-sub">Honorable Mention.</span>
+        </div>
+        <div class="cv-date">2026</div>
+    </div>
+    <div class="cv-row">
+        <div>
+            <span class="cv-role">Lecturer</span> <span style="color:#b3aca0;">&mdash; Academic Department, Mathematics Club</span>
+            <span class="cv-sub">Organized and delivered multiple large-scale lectures on mathematics topics.</span>
+        </div>
+        <div class="cv-date">&nbsp;</div>
+    </div>
+</section>
+
+<!-- ============ SKILLS ============ -->
+<section id="skills">
+    <h2>Skills</h2>
+    <div class="skill-row"><span class="skill-label">Programming</span><span>Python, C/C++, MATLAB, Lean</span></div>
+    <div class="skill-row"><span class="skill-label">Frameworks</span><span>PyTorch, TensorFlow</span></div>
+    <div class="skill-row"><span class="skill-label">Research</span><span>Mathematical Reasoning, Autoformalization, Post Training</span></div>
+    <div class="skill-row"><span class="skill-label">Languages</span><span>Chinese (native), English (fluent)</span></div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact">
+    <h2>Contact</h2>
+    <p>I am actively looking for research internships and visiting-student opportunities.</p>
+    <div class="contact-list">
+        <div class="row"><span class="k">Email</span><span><a href="#" data-email><span data-email-text>(loading)</span></a></span></div>
+        <div class="row"><span class="k">GitHub</span><span><a href="https://github.com/wendinggao">github.com/wendinggao</a></span></div>
+        <div class="row"><span class="k">Location</span><span>Suzhou, China</span></div>
+    </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="foot">
+    <span>&copy; 2026 Wending Gao</span>
+    <span>Last updated June 2026</span>
+</footer>
+
+</main>
+
+</div>
+
+<script>
+    // Email assembled at runtime to avoid Cloudflare / anti-scraper obfuscation
+    (function() {
+        const user = ['wending', '.', 'gao25'].join('');
+        const domain = ['student', '.', 'xjtlu', '.', 'edu', '.', 'cn'].join('');
+        const addr = user + '@' + domain;
+        document.querySelectorAll('[data-email]').forEach(el => {
+            el.setAttribute('href', 'mailto:' + addr);
+        });
+        document.querySelectorAll('[data-email-text]').forEach(el => {
+            el.textContent = addr;
+        });
+    })();
+</script>
+
+</body>
+</html>
