@@ -274,20 +274,6 @@ section p { margin: 12px 0; }
     margin-top: 1px;
 }
 
-/* ---------- Skills ---------- */
-.skill-row {
-    display: grid;
-    grid-template-columns: 140px 1fr;
-    gap: 16px;
-    padding: 6px 0;
-    font-size: 0.98rem;
-    align-items: baseline;
-}
-.skill-row .skill-label {
-    font-weight: bold;
-    color: #f5f5f6;
-}
-
 /* ---------- Contact ---------- */
 #contact p { margin: 8px 0; }
 .contact-list { margin: 10px 0; }
@@ -329,7 +315,6 @@ footer.foot {
     .quicklinks { flex-direction: row; flex-wrap: wrap; gap: 2px 14px; }
     .cv-row { grid-template-columns: 1fr; gap: 4px; }
     .cv-row .cv-date { text-align: left; }
-    .skill-row { grid-template-columns: 1fr; gap: 2px; }
     .contact-list .row { grid-template-columns: 90px 1fr; }
 }
 </style>
@@ -352,7 +337,6 @@ footer.foot {
             <a href="#publications">Publications</a>
             <a href="#projects">Projects</a>
             <a href="#activities">Activities</a>
-            <a href="#skills">Skills</a>
             <a href="#contact">Contact</a>
         </p>
     </div>
@@ -366,17 +350,21 @@ footer.foot {
 <section id="about">
     <h2>About</h2>
     <p>
-        I am a first-year undergraduate student at Xi'an Jiaotong-Liverpool University,
-        majoring in Applied Mathematics, and I am expected to complete my B.Sc. degree at
-        the University of Liverpool in 2029. Concurrently, I serve as a Research Assistant
-        at <a href="https://premilab-math.github.io">PremiLab</a>, where I am supervised by Prof. <a href="https://scholar.xjtlu.edu.cn/en/persons/QiufengWang/">Qiufeng Wang</a>. I am also seeking
-        research internships or visiting student opportunities. If you are interested in
-        my research, please feel free to contact me.
+        I am a first-year undergraduate student at the University of Liverpool,
+        majoring in Applied Mathematics. Concurrently, I serve as a Research Assistant
+        at <a href="https://premilab-math.github.io">PremiLab</a>, supervised by Prof. <a href="https://scholar.xjtlu.edu.cn/en/persons/QiufengWang/">Qiufeng Wang</a>, where I work on formal
+        mathematical problem-solving systems, agents, and multimodal reasoning of large
+        language models. If you are interested in
+        my research topics, please feel free to contact me for further discussion.
     </p>
     <p>
-        My research interests span <b>reinforcement learning</b> and <b>mathematical reasoning</b>. In
-        my spare time, I also engage in research on multimodal large language models and
-        mechanistic interpretability.
+        In recent months, I have been working on <b>AI4Math</b>, with a focus on strengthening
+        the mathematical reasoning of language models through formal methods. By representing
+        problems in formal languages, reasoning can be grounded in precise, verifiable
+        structures rather than in ambiguous natural-language descriptions. In my spare time, I have begun exploring
+        <b>Mechanistic Interpretability</b>. Compared with applying language models to practical
+        problems, I find probing their internal features a far more fascinating pursuit,
+        one that also helps us better improve their reasoning.
     </p>
 </section>
 
@@ -486,19 +474,12 @@ footer.foot {
     </div>
 </section>
 
-<!-- ============ SKILLS ============ -->
-<section id="skills">
-    <h2>Skills</h2>
-    <div class="skill-row"><span class="skill-label">Programming</span><span>Python, C/C++, MATLAB, Lean</span></div>
-    <div class="skill-row"><span class="skill-label">Frameworks</span><span>PyTorch, TensorFlow</span></div>
-    <div class="skill-row"><span class="skill-label">Research</span><span>Mathematical Reasoning, Autoformalization, Post Training</span></div>
-    <div class="skill-row"><span class="skill-label">Languages</span><span>Chinese (native), English (fluent)</span></div>
-</section>
-
 <!-- ============ CONTACT ============ -->
 <section id="contact">
     <h2>Contact</h2>
-    <p>I am actively looking for research internships and visiting-student opportunities.</p>
+    <p>I am looking for research internships and visiting-student opportunities. If you are
+        interested in my research topics, please feel free to contact me for further
+        discussion.</p>
     <div class="contact-list">
         <div class="row"><span class="k">Email</span><span><a href="#" data-email><span data-email-text>(loading)</span></a></span></div>
         <div class="row"><span class="k">GitHub</span><span><a href="https://github.com/wendinggao">github.com/wendinggao</a></span></div>
