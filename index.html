@@ -354,8 +354,8 @@ footer.foot {
         majoring in Applied Mathematics. Concurrently, I serve as a Research Assistant
         at <a href="https://premilab-math.github.io">PremiLab</a>, supervised by Prof. <a href="https://scholar.xjtlu.edu.cn/en/persons/QiufengWang/">Qiufeng Wang</a>, where I work on formal
         mathematical problem-solving systems, agents, and multimodal reasoning of large
-        language models. If you are interested in
-        my research topics, please feel free to contact me for further discussion.
+        language models. If you share similar research interests and would like to chat
+        about research or collaboration, please feel free to reach out via <a href="#" data-email>email</a>.
     </p>
     <p>
         In recent months, I have been working on <b>AI4Math</b>, with a focus on strengthening
@@ -481,7 +481,7 @@ footer.foot {
         interested in my research topics, please feel free to contact me for further
         discussion.</p>
     <div class="contact-list">
-        <div class="row"><span class="k">Email</span><span><a href="#" data-email><span data-email-text>(loading)</span></a></span></div>
+        <div class="row"><span class="k">Email</span><span><span data-email-text>(loading)</span></span></div>
         <div class="row"><span class="k">GitHub</span><span><a href="https://github.com/wendinggao">github.com/wendinggao</a></span></div>
         <div class="row"><span class="k">Location</span><span>Suzhou, China</span></div>
     </div>
@@ -507,7 +507,7 @@ footer.foot {
             el.setAttribute('href', 'mailto:' + addr);
         });
         document.querySelectorAll('[data-email-text]').forEach(el => {
-            el.textContent = addr;
+            el.textContent = user.split('.').join(' [dot] ') + ' [at] ' + domain.split('.').join(' [dot] ');
         });
     })();
 </script>
