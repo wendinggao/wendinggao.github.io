@@ -1,0 +1,74 @@
+<style>
+  .social.contact-links {
+    margin-top: 2rem;
+  }
+
+  .social.contact-links .contact-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .social.contact-links .contact-icons > a,
+  .social.contact-links .contact-icons > button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--global-text-color);
+    font-size: 2.3rem;
+    line-height: 1;
+  }
+
+  .social.contact-links .contact-icons > button {
+    cursor: default;
+  }
+
+</style>
+
+<div class="social contact-links">
+  <div class="contact-icons">
+    {% if site.data.socials.cv_pdf %}
+      {% assign cv_url = site.data.socials.cv_pdf %}
+      {% unless cv_url contains '://' %}
+        {% assign cv_url = cv_url | relative_url %}
+      {% endunless %}
+      <a href="{{ cv_url }}" aria-label="CV" title="CV">
+        <i class="ai ai-cv" aria-hidden="true"></i>
+      </a>
+    {% else %}
+      <button type="button" aria-label="CV" title="CV link pending">
+        <i class="ai ai-cv" aria-hidden="true"></i>
+      </button>
+    {% endif %}
+
+    <a href="mailto:{{ site.data.socials.email }}" aria-label="Email" title="Email">
+      <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+    </a>
+
+    {% if site.data.socials.linkedin_username %}
+      <a href="https://www.linkedin.com/in/{{ site.data.socials.linkedin_username }}" aria-label="LinkedIn" title="LinkedIn">
+        <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+      </a>
+    {% else %}
+      <button type="button" aria-label="LinkedIn" title="LinkedIn link pending">
+        <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+      </button>
+    {% endif %}
+
+    {% if site.data.socials.scholar_userid %}
+      <a href="https://scholar.google.com/citations?user={{ site.data.socials.scholar_userid }}" aria-label="Google Scholar" title="Google Scholar">
+        <i class="ai ai-google-scholar" aria-hidden="true"></i>
+      </a>
+    {% else %}
+      <button type="button" aria-label="Google Scholar" title="Google Scholar link pending">
+        <i class="ai ai-google-scholar" aria-hidden="true"></i>
+      </button>
+    {% endif %}
+  </div>
+</div>
