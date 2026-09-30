@@ -2,25 +2,22 @@ cv:
   name: Wending Gao
   label: Applied Mathematics Undergraduate
   email: wending.gao25@student.xjtlu.edu.cn
-  website: https://wendinggao.github.io/
-  summary: >-
-    Applied Mathematics undergraduate at the University of Liverpool and
-    Research Assistant at PremiLab, working on formal mathematics, agent
-    systems, and reinforcement learning.
+  address:
+    region: 苏州，中国
   sections:
     Education:
       - institution: University of Liverpool
         studyType: BSc
         area: Applied Mathematics
+        start_date: 2025
         highlights:
           - Expected graduation in 2029.
     Experience:
       - company: PremiLab
         position: Research Assistant
+        start_date: 2026
         url: https://premilab-math.github.io/
         summary: Supervised by Prof. [Qiufeng Wang](https://scholar.xjtlu.edu.cn/en/persons/QiufengWang/).
-        highlights:
-          - Research in formal mathematics, agent systems, and reinforcement learning.
     Publications:
       - title: "PhysElite: How Far Are LLMs from Solving Olympiad-Level Physics Problems?"
         date: 2026
