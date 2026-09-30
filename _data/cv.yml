@@ -19,6 +19,10 @@ cv:
         start_date: 2026
         url: https://premilab-math.github.io/
         summary: Supervised by Prof. [Qiufeng Wang](https://scholar.xjtlu.edu.cn/en/persons/QiufengWang/).
+    Awards:
+      - title: Honorable Mention (MCM/ICM)
+        date: 2026
+        awarder: COMAP
     Publications:
       - title: "PhysElite: How Far Are LLMs from Solving Olympiad-Level Physics Problems?"
         date: 2026
