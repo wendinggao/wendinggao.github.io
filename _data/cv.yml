@@ -1,0 +1,39 @@
+cv:
+  name: Wending Gao
+  label: Applied Mathematics Undergraduate
+  email: wending.gao25@student.xjtlu.edu.cn
+  website: https://wendinggao.github.io/
+  summary: >-
+    Applied Mathematics undergraduate at the University of Liverpool and
+    Research Assistant at PremiLab, working on formal mathematics, agent
+    systems, and reinforcement learning.
+  sections:
+    Education:
+      - institution: University of Liverpool
+        studyType: BSc
+        area: Applied Mathematics
+        highlights:
+          - Expected graduation in 2029.
+    Experience:
+      - company: PremiLab
+        position: Research Assistant
+        url: https://premilab-math.github.io/
+        summary: Supervised by Prof. [Qiufeng Wang](https://scholar.xjtlu.edu.cn/en/persons/QiufengWang/).
+        highlights:
+          - Research in formal mathematics, agent systems, and reinforcement learning.
+    Publications:
+      - title: "PhysElite: How Far Are LLMs from Solving Olympiad-Level Physics Problems?"
+        date: 2026
+        publisher: The Fortieth Annual Conference on Neural Information Processing Systems
+        url: /publications/#xu2026physelite
+        summary: 'Ruoran Xu\*, Wending Gao\*, Liyunfeng Chen\*, Aixin Shi\*, Haoyu Cheng, Zixiang Fang, Yiqiang Zou, and Qiufeng Wang. \* Equal contribution.'
+      - title: Dense Neuro-Symbolic Reasoning in a Unified Geometry State
+        date: 2026
+        publisher: The Sixth Workshop on Mathematical Reasoning and AI
+        url: /publications/#xu2026densegeometry
+        summary: Ruoran Xu, Wending Gao, Haoyu Cheng, Xiaoqiang Kang, and Qiufeng Wang.
+      - title: "GeoFlip: Do Multimodal Models Know When a Geometry Problem Is No Longer Solvable?"
+        date: 2026
+        publisher: Under Review
+        url: /publications/#kanggeoflip
+        summary: 'Xiaoqiang Kang\*, Wending Gao\*, Xiaobo Jin, Kaizhu Huang, Xiaowei Huang, and Qiufeng Wang. \* Equal contribution.'
