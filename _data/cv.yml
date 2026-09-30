@@ -23,6 +23,11 @@ cv:
       - title: Honorable Mention (MCM/ICM)
         date: 2026
         awarder: COMAP
+    Languages:
+      - name: Chinese
+        summary: Native
+      - name: English
+        summary: Fluent
     Publications:
       - title: "PhysElite: How Far Are LLMs from Solving Olympiad-Level Physics Problems?"
         date: 2026
