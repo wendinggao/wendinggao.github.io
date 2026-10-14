@@ -388,6 +388,7 @@ filtered_bibtex_keywords:
     award,
     award_name,
     bibtex_show,
+    bibtex_override,
     blog,
     code,
     dimensions,

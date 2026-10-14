@@ -353,9 +353,15 @@
     {% if entry.bibtex_show %}
       <!-- Hidden bibtex block -->
       <div id="{{ entry.key }}-bibtex" class="bibtex hidden">
-        {% highlight bibtex %}
-        {{- entry.bibtex | hideCustomBibtex -}}
-      {% endhighlight %}
+        {% if entry.bibtex_override %}
+          {% highlight bibtex %}
+          {{- entry.bibtex_override -}}
+          {% endhighlight %}
+        {% else %}
+          {% highlight bibtex %}
+          {{- entry.bibtex | hideCustomBibtex -}}
+          {% endhighlight %}
+        {% endif %}
       </div>
     {% endif %}
 
