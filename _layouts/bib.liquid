@@ -353,9 +353,10 @@
     {% if entry.bibtex_show %}
       <!-- Hidden bibtex block -->
       <div id="{{ entry.key }}-bibtex" class="bibtex hidden">
-        {% if entry.bibtex_override %}
+        {% assign custom_bibtex = site.data.publication_bibtex[entry.key] %}
+        {% if custom_bibtex %}
           {% highlight bibtex %}
-          {{- entry.bibtex_override -}}
+          {{- custom_bibtex -}}
           {% endhighlight %}
         {% else %}
           {% highlight bibtex %}

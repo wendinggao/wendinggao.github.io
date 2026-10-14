@@ -1,0 +1,8 @@
+xu2026physelite: |
+  @inproceedings{anonymous2026physelite,
+    title={PhysElite:  How Far Are {LLM}s from Solving Olympiad-Level Physics Problems?},
+    author={Anonymous},
+    booktitle={The Fortieth Annual Conference on Neural Information Processing Systems Evaluations and Datasets Track},
+    year={2026},
+    url={https://openreview.net/forum?id=f3ceI8ijyu}
+  }
