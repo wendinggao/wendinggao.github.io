@@ -38,8 +38,3 @@ cv:
         publisher: The Sixth Workshop on Mathematical Reasoning and AI
         url: /publications/#xu2026densegeometry
         summary: Ruoran Xu, Wending Gao, Haoyu Cheng, Xiaoqiang Kang, and Qiufeng Wang.
-      - title: "GeoFlip: Do Multimodal Models Know When a Geometry Problem Is No Longer Solvable?"
-        date: 2026
-        publisher: Under Review
-        url: /publications/#kanggeoflip
-        summary: 'Xiaoqiang Kang\*, Wending Gao\*, Xiaobo Jin, Kaizhu Huang, Xiaowei Huang, and Qiufeng Wang. \* Equal contribution.'
