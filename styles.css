@@ -166,6 +166,7 @@ article + article { margin-top: 1.8em; }
   color: #e1e3e2;
   font: 400 17px/1.6 "Averia Serif Libre", Georgia, serif;
 }
+.publication h3 a { text-decoration: none; }
 .publication p { line-height: 1.65; }
 .publication p + p { margin-top: 2px; }
 .publication .publication-authors { color: #b9bdbd; }
