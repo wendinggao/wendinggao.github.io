@@ -173,6 +173,26 @@ p, li {
 
 section p { margin: 0; color: #bfc2c2; font-family: "Averia Serif Libre", Georgia, serif; font-weight: 300; }
 section p + p { margin-top: 1em; }
+
+.xjtlu-crest {
+  display: inline-block;
+  position: relative;
+  width: 0.82em;
+  height: 1.04em;
+  margin-right: 0.25em;
+  overflow: hidden;
+  vertical-align: -0.17em;
+  clip-path: polygon(4% 2%, 96% 2%, 96% 45%, 89% 67%, 74% 85%, 50% 96%, 26% 85%, 11% 67%, 4% 45%);
+}
+.xjtlu-crest img {
+  position: absolute;
+  width: 7.72em;
+  max-width: none;
+  height: auto;
+  left: -1.06em;
+  top: -1.06em;
+}
+
 article + article { margin-top: 1.8em; }
 .publication h3 {
   margin: 0 0 5px;
